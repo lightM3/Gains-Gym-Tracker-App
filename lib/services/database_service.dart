@@ -9,7 +9,7 @@ class DatabaseService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  // O anki kullanıcının ID'sini alma
+  // Kullanıcının ID'sini alma
   String get _userId {
     final user = _auth.currentUser;
     if (user == null) {
@@ -86,7 +86,7 @@ class DatabaseService {
     }
   }
 
-  // Streak (seri) bilgisini güncelleme
+  // Streak bilgisini güncelleme
   Future<void> updateStreak(int newStreak, DateTime lastLogin) async {
     await _userDoc.update({
       'currentStreak': newStreak,
@@ -190,7 +190,7 @@ class DatabaseService {
       final doc = snapshot.docs.first;
       final session = WorkoutSession.fromMap(doc.data(), doc.id);
 
-      // Bu antrenman oturumu için setleri getirme
+      // Anlık antrenman için setleri getirme
       final setsSnapshot = await _setsCollection
           .where('sessionId', isEqualTo: session.id)
           .orderBy('completedAt')
@@ -281,7 +281,7 @@ class DatabaseService {
     return WorkoutRoutine.fromMap(doc.data()!, doc.id);
   }
 
-  // Yeni bir antrenman oturumu başlatma
+  // Yeni bir antrenman başlatma
   Future<String> startSession(String routineId, String routineName) async {
     final session = WorkoutSession()
       ..routineId = routineId
@@ -292,7 +292,7 @@ class DatabaseService {
     return docRef.id;
   }
 
-  // Antrenman oturumunu bitirme ve özet bilgileri kaydetme
+  // Antrenmanı bitirme ve özet bilgileri kaydetme
   Future<void> completeSession(
     String sessionId,
     int duration, {
@@ -348,7 +348,7 @@ class DatabaseService {
     await saveSetRecord(setRecord);
   }
 
-  // Son bir haftalık hacim (volume) verilerini hesaplama
+  // Son bir haftalık hacim verilerini hesaplama
   Future<Map<DateTime, double>> getWeeklyVolume() async {
     final now = DateTime.now();
     final weekAgo = now.subtract(const Duration(days: 7));
@@ -373,7 +373,7 @@ class DatabaseService {
     return volumeMap;
   }
 
-  // En iyi ağırlıkları (PR) getirme
+  // PR getirme
   Future<List<SetRecord>> getBestLifts() async {
     final snapshot = await _setsCollection
         .orderBy('weight', descending: true)
@@ -401,7 +401,6 @@ class DatabaseService {
       if (session.totalDuration > 0) {
         totalDuration += session.totalDuration;
       } else if (session.completedAt != null && session.startedAt != null) {
-        // Eski kayıtlar için yedek hesaplama yöntemi
         totalDuration += session.completedAt!
             .difference(session.startedAt!)
             .inSeconds;
@@ -427,7 +426,7 @@ class DatabaseService {
     await updateCurrentRoutineIndex(nextIndex);
   }
 
-  // Vücut ölçümlerini yönetme
+  // Vücut ölçümleri
   CollectionReference<Map<String, dynamic>> get _measurementsCollection =>
       _userDoc.collection('measurements');
 

@@ -4,7 +4,7 @@ import 'package:gains/utils/app_colors.dart';
 import 'package:gains/providers/analytics_provider.dart';
 import 'package:intl/intl.dart';
 
-// Kişisel rekorlar sayfası
+// PR sayfası
 class PersonalRecordsPage extends ConsumerWidget {
   const PersonalRecordsPage({super.key});
 

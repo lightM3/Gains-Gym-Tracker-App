@@ -401,7 +401,7 @@ class _WorkoutEditPageState extends ConsumerState<WorkoutEditPage> {
     );
   }
 
-  // Egzersiz seçici (BottomSheet) gösterme
+  // Egzersiz seçici
   void _showExerciseSelector(List<Exercise> allExercises) {
     showModalBottomSheet(
       context: context,

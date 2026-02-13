@@ -115,14 +115,10 @@ final heatMapDataProvider = FutureProvider.autoDispose<Map<DateTime, double>>((
       ratio = session.completedExercises / session.totalExercises;
       if (ratio > 1.0) ratio = 1.0;
     } else {
-      // Eski verilerde totalExercises 0 olabilir, setlere bakarak yedek işlem yapma
-      // Ancak şu an için 1.0 kabul etme (tamamlandıysa tamamdır)
-      // Veya 0.0 kabul etme.
-      // Varsayılan olarak tamamlanan oturum ise %100 varsayma, motive edici olsun.
       ratio = 1.0;
     }
 
-    // O gün için daha yüksek bir oran varsa onu tutma (günde birden fazla antrenman)
+    // O gün için daha yüksek bir oran varsa onu tutma
     if (!heatMap.containsKey(date) || ratio > heatMap[date]!) {
       heatMap[date] = ratio;
     }

@@ -57,7 +57,7 @@ class _BodyFatCalculatorDialogState extends State<BodyFatCalculatorDialog> {
 
       double bodyFat;
 
-      // ABD Donanması metoduna göre yağ oranı hesaplama
+      // Yağ oranı hesaplama
       if (_gender == 'male') {
         bodyFat =
             495 /

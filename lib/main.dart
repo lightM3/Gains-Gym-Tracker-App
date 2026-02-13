@@ -10,7 +10,7 @@ import 'package:gains/screens/auth/login_screen.dart';
 import 'package:gains/providers/auth_provider.dart';
 import 'package:gains/services/notification_service.dart';
 
-// Uygulama başlangıç noktası
+// Uygulama başlangıcı
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();

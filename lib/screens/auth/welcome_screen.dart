@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gains/utils/app_colors.dart';
 
-// Karşılama ekranı widget'ı
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
   @override

@@ -14,23 +14,23 @@ enum MuscleGroup {
   String get displayName {
     switch (this) {
       case MuscleGroup.chest:
-        return 'Göğüs';
+        return 'Chest';
       case MuscleGroup.shoulders:
-        return 'Omuz';
+        return 'Shoulders';
       case MuscleGroup.back:
-        return 'Sırt';
+        return 'Back';
       case MuscleGroup.biceps:
         return 'Biceps';
       case MuscleGroup.triceps:
         return 'Triceps';
       case MuscleGroup.legs:
-        return 'Bacak';
+        return 'Legs';
       case MuscleGroup.abs:
-        return 'Karın';
+        return 'Abs';
       case MuscleGroup.cardio:
-        return 'Kardio';
+        return 'Cardio';
       case MuscleGroup.other:
-        return 'Diğer';
+        return 'Other';
     }
   }
 }

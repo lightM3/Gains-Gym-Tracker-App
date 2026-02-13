@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
-// Uygulama teması yapılandırması
+// Uygulama genel teması
 class AppTheme {
   static ThemeData get darkTheme {
     return ThemeData(

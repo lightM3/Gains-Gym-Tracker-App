@@ -191,7 +191,7 @@ class NotificationService {
     }
   }
 
-  // Streak hatırlatıcısını planlama
+  // Streak hatırlatıcısı
   Future<void> scheduleStreakReminder() async {
     await scheduleDailyNotification(
       id: 0,
@@ -201,7 +201,7 @@ class NotificationService {
     );
   }
 
-  // Haftalık tekrarlı bildirim planlama
+  // Haftalık bildirim
   Future<void> scheduleWeeklyNotification({
     required int id,
     required String title,
@@ -260,12 +260,11 @@ class NotificationService {
 
   // Haftalık kilo takibi hatırlatıcısını planlama
   Future<void> scheduleWeeklyWeightReminder() async {
-    // Pazartesi sabah 9:00 için planlama
     await scheduleWeeklyNotification(
-      id: 100, // Kilo hatırlatıcısı için ID
+      id: 100,
       title: '⚖️ Kilo Takibi Zamanı!',
       body: 'Haftalık kilonu güncelleyerek gelişimini takip et.',
-      weekday: 1, // Pazartesi
+      weekday: 1,
       time: const TimeOfDay(hour: 9, minute: 0),
     );
   }

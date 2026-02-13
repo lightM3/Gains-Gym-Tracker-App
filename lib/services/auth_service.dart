@@ -130,7 +130,7 @@ class AuthService {
     }
   }
 
-  // Yeniden kimlik doğrulama (Hassas işlemler için)
+  // Yeniden kimlik doğrulama
   Future<void> reauthenticate(String email, String password) async {
     try {
       final user = _auth.currentUser;
