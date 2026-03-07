@@ -32,7 +32,7 @@
 
 | Home Screen | Workout Builder | Active Workout | Analytics |
 |:-----------:|:---------------:|:--------------:|:---------:|
-| <img src="assets/screenshots/home.png" width="200" /> | <img src="assets/screenshots/builder.png" width="200" /> | <img src="assets/screenshots/active.png" width="200" /> | <img src="assets/screenshots/analytics.png" width="200" /> |
+| <img src="assets/screenshots/home.jpg" width="200" /> | <img src="assets/screenshots/builder.jpg" width="200" /> | <img src="assets/screenshots/active.jpg" width="200" /> | <img src="assets/screenshots/analyze1.jpg" width="200" /> | <img src="assets/screenshots/analyze2.jpg" width="200" /> |
 
 
 ## 🛠️ Technology Stack
@@ -59,7 +59,7 @@ Follow these steps to set up the project locally.
 
 1.  **Clone the Repository**
     ```bash
-    git clone https://github.com/yourusername/gains.git
+    git clone https://github.com/lightM3/gains.git
     cd gains
     ```
 
